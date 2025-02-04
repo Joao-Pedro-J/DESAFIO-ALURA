@@ -9,24 +9,40 @@ function adicionarAmigo(){
         amigo.value = '';
 
         atualizarListaAmigos();
-
     }else{
         alert("Por favor, insira um nome!");
     }
+}
 
-    function atualizarListaAmigos(){
-    	let lista = document.getElementById('listaAmigos');
+function atualizarListaAmigos(){
+    let lista = document.getElementById('listaAmigos');
 
-    	lista.innerHTML = '';
+    lista.innerHTML = '';
 
-    	for(let i = 0; i < amigos.length; i++){
-    		let elemento = document.createElement('li');
+    for(let i = 0; i < amigos.length; i++){
+        let elemento = document.createElement('li');
 
-    		let texto = document.createTextNode(amigos[i]);
+        let texto = document.createTextNode(amigos[i]);
 
-    		elemento.appendChild(texto);
+        elemento.appendChild(texto);
 
-    		lista.appendChild(elemento);
-    	}
+        lista.appendChild(elemento);
+    }
+}
+function sortearAmigo(){
+    if(amigos.length != '' ){
+        let numeroDaSorte = Math.floor(Math.random() * amigos.length)
+
+        let resultado = document.getElementById('resultado');
+
+        resultado.innerHTML = ''
+
+        let elemento = document.createElement('li');
+
+        let nomeSorteado = document.createTextNode(amigos[numeroDaSorte])
+
+        elemento.appendChild(nomeSorteado);
+
+        resultado.appendChild(elemento);
     }
 }
