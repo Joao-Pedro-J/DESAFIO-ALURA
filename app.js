@@ -29,3 +29,12 @@ function atualizarListaAmigos(){
 		lista.appendChild(elemento);
 	}
 }
+
+function sortearAmigo(){
+    if(amigos != ''){
+        let numeroSorte = Math.floor(Math.random() * amigos.length)
+
+        document.getElementById('resultado').innerHTML = amigos[numeroSorte];
+    }
+
+}
